@@ -36,7 +36,7 @@ const Home = () => {
                 <CardWeather index={i} data={city} />
               </div>
             ))}
-            <div className="card pt-2 mt-3 bg-white border-0 shadow ">
+            <div className="card pt-2 mt-3 bg-white border-0 shadow d-none d-sm-block">
               <div className="card-body">
                 <TableWeatherInformation city={firstCity} />
               </div>
