@@ -1,0 +1,7 @@
+.mainContainer {
+  overflow-x: hidden;
+}
+
+.leftSide {
+  overflow-y: scroll;
+}

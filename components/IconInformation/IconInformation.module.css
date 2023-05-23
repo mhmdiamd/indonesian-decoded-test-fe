@@ -1,0 +1,10 @@
+.iconImage {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.dayInformation {
+  font-size: .8em;
+  position: relative;
+  top: -2px;
+}

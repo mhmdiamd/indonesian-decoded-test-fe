@@ -1,0 +1,58 @@
+.rightSide {
+  background-attachment: fixed !important;
+}
+
+.cloudSize1 {
+  position: absolute;
+  font-size: 9rem;
+  color: rgba(255, 255,255, 0.2);
+  top: 100px;
+  left: -70px;
+}
+
+.cloudSize2 {
+  position: absolute;
+  font-size: 6rem;
+  color: rgba(255, 255,255, 0.2);
+  top: 250px;
+  right: -50px;
+}
+
+.cloudSize3 {
+  position: absolute;
+  font-size: 3rem;
+  color: rgba(255, 255,255, 0.2);
+  top: 30px;
+  right: 50px;
+}
+
+.cloudWindImage {
+  width: 45px;
+  height: 45px;
+}
+
+.windDirectionImage {
+  width: 45px;
+  height: 25px;
+}
+
+
+.dayInformation {
+  font-size: .8em;
+  position: relative;
+  top: -2px;
+  color: rgba(255, 255,255, 0.8) !important;
+}
+
+
+.cloudImage {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+
+.windImage {
+  max-width: 50px;
+  max-height: 50px;
+}
+

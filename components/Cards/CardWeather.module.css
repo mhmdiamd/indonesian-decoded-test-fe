@@ -1,0 +1,35 @@
+.cardWeather {
+  height: 200px !important;
+  max-height: 220px ;
+  transition: .5s;
+}
+
+.currentCity {
+  height: 220px !important;
+}
+
+.cardWeather:hover {
+  height: 220px !important;
+}
+
+.cardImg {
+  width: 200px;
+}
+
+.bodyBg {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1075px) {
+  .cardWeather {
+    height: 150px !important;
+  }
+
+
+.currentCity {
+  height: 180px !important;
+}
+  .cardImg {
+    width: auto;
+  }
+}

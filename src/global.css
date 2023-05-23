@@ -1,0 +1,29 @@
+
+/* .col-6, 
+.col-md-4, 
+.col-lg-3{
+  padding: 8px !important;
+} */
+
+.main-bg {
+  background-color: #110E3C !important;
+}
+
+.bg-white {
+  background-color: #F2FBFF !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.text-semiwhite {
+  color: rgba(255, 255,255, 0.8) !important;
+}
+.text-very-semiwhite {
+  color: rgba(255, 255,255, 0.6) !important;
+}
+
+.text-small {
+  font-size: .9rem;
+}

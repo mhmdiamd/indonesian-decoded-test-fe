@@ -1,0 +1,19 @@
+
+.degreeNumber {
+  padding: 0 !important;
+  font-size: 6em;
+  line-height:80%;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+@media (max-width: 865px) {
+  .degreeNumber {
+    font-size: 4.5em;
+  }
+}
+
+@media (max-width: 576px) {
+  .degreeNumber {
+    font-size: 6em;
+  }
+}

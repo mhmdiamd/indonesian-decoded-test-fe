@@ -1,0 +1,14 @@
+
+.dayInformation {
+  font-size: .8em;
+  position: relative;
+  top: -2px;
+  color: rgba(255, 255,255, 0.8) !important;
+}
+
+
+.cloudImage {
+  max-width: 30px;
+  max-height: 30px;
+}
+
