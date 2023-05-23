@@ -50,7 +50,7 @@ const Home = () => {
           <FontAwesomeIcon className={`${styles.cloudSize2}`} icon={faCloud} />
           <FontAwesomeIcon className={`${styles.cloudSize3}`} icon={faCloud} />
 
-          <div className="row d-flex flex-column w-100 justify-content-center ms-2">
+          <div className="row d-flex flex-column w-100 justify-content-center ms-1">
             <RowSection className={"justify-content-center mb-5"}>
               <WeatherHeaderCondition />
             </RowSection>
