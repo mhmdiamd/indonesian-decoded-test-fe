@@ -28,6 +28,7 @@ const Home = () => {
   }, [currentWeather])
 
   return (
+    
       <MainTemplate title={"Weather Information"}
         leftside={
           <>
