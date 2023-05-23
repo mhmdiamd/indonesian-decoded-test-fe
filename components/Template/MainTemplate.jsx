@@ -22,7 +22,7 @@ const MainTemplate = ({leftside, children, title}) => {
         <div className="container">
           <div className="row">
           <div className='col-12 p-2 p-md-4'>
-            <div className="row ps-4">
+            <div className="row p-3 p-sm-0 ps-sm-3">
               <div className="col-12 mb-3">
                 {renderTitle()}
               </div>
