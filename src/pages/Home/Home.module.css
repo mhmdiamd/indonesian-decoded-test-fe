@@ -50,9 +50,17 @@
   max-height: 40px;
 }
 
-
 .windImage {
   max-width: 50px;
   max-height: 50px;
+}
+
+.detailIcon {
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  top: 15px;
+  right: 25px;
+  padding: 8px;
 }
 

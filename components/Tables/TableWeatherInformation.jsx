@@ -9,9 +9,8 @@ import IconInformation from '../IconInformation/IconInformation'
 import cloudWindImage from "../../src/assets/cloud-wind.png"
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
-import Button from 'react-bootstrap/Button';
 
-const TableWeatherInformation = ({city}) => {
+const TableWeatherInformation = ({city, className}) => {
 
   const renderTooltip = (props, value) => (
     <Tooltip id="button-tooltip" {...props}>
@@ -50,7 +49,7 @@ const TableWeatherInformation = ({city}) => {
   }, [isLoading, currentWeather])
 
   return (
-    <table className="table ms-2 table-borderless">
+    <table className={`table table-borderless ${className}`}>
       <tbody>
         {weathers?.map((weather, i) => (
           <tr className='mb-2' key={i}>

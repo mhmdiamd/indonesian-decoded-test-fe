@@ -42,8 +42,8 @@ const CardWeather = ({ data, index }) => {
         <Card.Body className={`p-3 w-100 h-100 ${styles.bodyBg} position-relative`}>
           <Card.Title className='text-light'>{dataCity?.name}</Card.Title>
           <div className="long-lat d-flex flex-column">
-            <span className='text-small text-light'>{latDms}</span>
-            <span className='text-small text-light'>{lonDms}</span>
+            <span className='text-small text-light'>lat {latDms}</span>
+            <span className='text-small text-light'>lon {lonDms}</span>
           </div>
         </Card.Body>
       </Card>

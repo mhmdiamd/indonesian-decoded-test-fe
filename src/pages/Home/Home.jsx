@@ -3,7 +3,7 @@ import { cityWeatherList } from '../../../lib/cityList'
 import CardWeather from '../../../components/Cards/CardWeather'
 import MainTemplate from '../../../components/Template/MainTemplate'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloud } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarDay, faCircleInfo, faCloud } from '@fortawesome/free-solid-svg-icons';
 import styles from './Home.module.css'
 import {  useSelector } from 'react-redux';
 import cloudWindPng from '../../assets/cloud-wind.png'
@@ -13,6 +13,8 @@ import { convertUnixToHours, convertUnixToMinute } from '../../../helpers/conver
 import WeatherHeaderCondition from '../../../components/RightSide/WeatherHeaderCondition/WeatherHeaderCondition';
 import windDirectionImage from "../../assets/wind-direction.png"
 import TableWeatherInformation from '../../../components/Tables/TableWeatherInformation';
+import IconInformation from '../../../components/IconInformation/IconInformation';
+import ModalHistoryWeather from '../../../components/Modals/ModalHistoryWeather/ModalHistoryWeather';
 
 const Home = () => {
   let { currentWeather } = useSelector(state => state.weather)
@@ -37,7 +39,7 @@ const Home = () => {
                 <CardWeather index={i} data={city} />
               </div>
             ))}
-            <div className="card pt-2 mt-3 bg-white border-0 shadow d-none d-sm-block">
+            <div className="card pt-2 mt-3 bg-white border-0 d-none d-md-block">
               <div className="card-body">
                 <TableWeatherInformation city={firstCity} />
               </div>
@@ -47,47 +49,41 @@ const Home = () => {
       >
         <div className={`${styles.rightSide} h-100 d-flex position-relative overflow-hidden`} id='scrollspyHeading1'>
 
+          <FontAwesomeIcon icon={faCalendarDay} className={`${styles.detailIcon} fs-5 text-dark position-absolute rounded-circle pointer d-block d-md-none`} data-bs-toggle="modal" data-bs-target="#historyWeather" />
+          <ModalHistoryWeather id={`historyWeather`} data={currentWeather}/>
+
           <FontAwesomeIcon className={`${styles.cloudSize1}`} icon={faCloud} />
           <FontAwesomeIcon className={`${styles.cloudSize2}`} icon={faCloud} />
-          <FontAwesomeIcon className={`${styles.cloudSize3}`} icon={faCloud} />
+          <FontAwesomeIcon className={`${styles.cloudSize3}`} icon={faCloud} />   
 
           <div className="row d-flex flex-column w-100 justify-content-center ms-1">
-            <RowSection className={"justify-content-center mb-5"}>
+            <RowSection className={`justify-content-center mb-5`}>
               <WeatherHeaderCondition />
             </RowSection>
 
-            <RowSection className={"justify-content-center"}>
+            <RowSection className={"justify-content-center align-items-center flex-column my-3"}>
               <WeatherDegree />
+
+              <span className={`text-light text-center text-semiwhite text-small fw-semibold`}>{currentWeather?.weather?.[0].description}</span>
+              <span className={`text-light text-center text-semiwhite text-small`}>{currentWeather?.name}, Indonesia</span>
+              <div className={`text-small d-flex justify-content-center text-semiwhite mt-3`}>
+                <span className='me-2'>{sunset}</span>
+                <span> • </span>
+                <span className='ms-2'>{sunrise}</span>
+              </div>
             </RowSection>
 
-            <span className={`text-light text-center text-semiwhite text-small`}>{currentWeather?.name}, Indonesia</span>
-            <div className={`text-small d-flex justify-content-center text-semiwhite`}>
-              <span className='me-2'>{sunset}</span>
-              <span> • </span>
-              <span className='ms-2'>{sunrise}</span>
-            </div>
-
-            <RowSection className={"gap-4 mt-5 justify-content-center align-items-center "}>
-    
-              <div className="labelWeather d-flex align-items-start">
-                <img src={cloudWindPng} className={`${styles.cloudImage}`} alt="cloud-image" />
-                <div className="day-information ms-2 d-flex justify-content-center flex-column">
-                  <span className={`text-light`}>{currentWeather?.wind?.speed} m/s</span>
-                  <span className={`${styles.dayInformation}`}>Wind Speed</span>
-                </div>
-              </div>
-
-              <div className="labelWeather d-flex align-items-start">
-                <img src={windDirectionImage} className={`${styles.windImage}`} alt="cloud-image" />
-                <div className="day-information ms-2 d-flex justify-content-center flex-column">
-                  <span className={`text-light`}>{currentWeather?.wind?.deg}°</span>
-                  <span className={`${styles.dayInformation}`}>Direction</span>
-                </div>
-              </div>
+            <RowSection className={"gap-4 mt-5 justify-content-center align-items-center"}>
+              {/* Wind Speed */}
+              <IconInformation image={cloudWindPng} value={`${currentWeather?.wind?.speed} m/s`} desc={`Wind Speed`} textColor={"text-light"}/>
+              {/* Wind Direction */}
+              <IconInformation image={windDirectionImage} value={`${currentWeather?.wind?.deg}°`} desc={`Direction`} textColor={"text-light"}/>
             </RowSection>
           </div>
         </div>
+
       </MainTemplate>
+      
     )
 }
 
